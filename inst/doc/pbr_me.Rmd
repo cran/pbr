@@ -1,0 +1,74 @@
+---
+title: "PBR Me"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{pbr_me_asap}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo = FALSE}
+library(pbr)
+library(htmltools)
+```
+
+<img src='../man/figures/logo.png' width="300" height="300" style="border: none" align="right"/>
+
+Been a hard day of analysis? In the lab? Programming Shiny apps? Making 
+data visualizations? Maybe you just finished your defense and want to go 
+celebrate. Either way, you need a cold one, and you need it now. The pbr package
+makes it easy for you to find the closest place to get an ice cold brew. Simply 
+use the pbr_me function along with your ZIP code or city name and 
+a dynamic map will appear with the nearest places to find one.
+
+```{r pbr_me, eval = FALSE}
+pbr_me("Milwaukee, WI")
+```
+
+ZIP codes are perhaps a bit more dependable
+
+```{r pbr_me_zip, eval = FALSE}
+pbr_me(53210)
+```
+
+\
+
+# PBR me ASAP
+
+Need a cold brew now and it just can't wait? Are you too thirsty to remember what 
+your ZIP code or current location is? No problem...just pbr_me_asap.
+
+```{r pbr_me_asap, eval = FALSE}
+pbr_me_asap()
+```
+
+
+
+```{r milwaukee_pbr, echo = FALSE, fig.height = 8, fig.width = 8}
+format_leaf_lab <- function(name, address, city, state, zip) {
+  out <- paste(
+    "<strong>", name, "</strong>",
+    "<br>",
+    address,
+    "<br>",
+    paste0(city, ", ", state, " ", zip)
+  )
+  return(lapply(out, htmltools::HTML))
+}
+leaflet::leaflet(data = milwaukee) |>
+  leaflet::addTiles() |>
+  leaflet::addMarkers(
+    ~lon, ~lat,
+    label = ~format_leaf_lab(name, address, city, state, zip)
+  )
+```
+
+
+
