@@ -22,7 +22,8 @@
 #' @name pbr_me
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
+#'
 #' pbr_me(54481)
 #' pbr_me_asap() # for when you just don't have time to enter your zip code
 #' }

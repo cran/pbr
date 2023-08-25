@@ -1,7 +1,7 @@
 Package: pbr
 Type: Package
 Title: Find a Cold One Near You
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(person(given = "Paul",
            family = "Frater",
            role = c("aut", "cre"),
@@ -21,7 +21,7 @@ Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2023-05-01 14:32:13 UTC; paul
+Packaged: 2023-08-25 02:21:09 UTC; paul
 Author: Paul Frater [aut, cre] (<https://orcid.org/0000-0002-7237-6563>)
 Repository: CRAN
-Date/Publication: 2023-05-02 21:10:02 UTC
+Date/Publication: 2023-08-25 15:20:02 UTC

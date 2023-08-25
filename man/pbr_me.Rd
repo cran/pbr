@@ -34,7 +34,8 @@ of the locations. \code{pbr_me_asap} displays a leaflet map of retailer location
 within your current proximity for those moments when you just need a cold one now
 }
 \examples{
-\donttest{
+\dontrun{
+
 pbr_me(54481)
 pbr_me_asap() # for when you just don't have time to enter your zip code
 }
